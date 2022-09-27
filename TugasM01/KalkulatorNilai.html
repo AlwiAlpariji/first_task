@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html{
+        background-color: aquamarine;
+    }
+    #form {
+        width: 400px;
+        margin-top: 70px;
+        background-color:rgb(255, 225, 0);
+        border-style: double;
+        border-radius: 1mm;
+    }
+    label{
+        text-align: center;
+    }
+    button{
+        text-align: center;
+    }
+</style>
+
+<body>
+    <form action="#" id="form">
+        <label for="uts"><p>UTS : </p></label>
+            <input type="number" name="uts" id="UTS">
+        <hr>
+        <label for="uas"><p>UAS : </p></label>
+            <input type="number" name="uas" id="UAS">
+        <hr>
+        <label for="tugas"><p>Tugas : </p></label>
+            <input type="number" name="tugas" id="Tugas">
+        <hr>
+        <button type="button" id="button">Submit</button>
+        <p id="hasilHuruf">Nilai Huruf : -</p>
+    </form>
+    
+</body>
+<script>
+    document.getElementById("button").addEventListener("click", function(){
+        let nuas = document.getElementById("UAS").value
+        let nuts = document.getElementById("UTS").value
+        let ntugas = document.getElementById("Tugas").value
+        let hasilhuruf = 0.4*ntugas + 0.3*nuas + 0.3*nuts
+        document.getElementById("hasilHuruf").innerText = hasilhuruf
+        let nilaihuruf = ""
+        if(hasilhuruf > 79){
+            nilaihuruf = "A"
+        }
+        else if(hasilhuruf > 69){
+            nilaihuruf = "B"
+        }
+        else if(hasilhuruf > 49){
+            nilaihuruf = "C"
+        }
+        else if(hasilhuruf > 39){
+            nilaihuruf = "D"
+        }else{
+            nilaihuruf = "E"
+        }
+        document.getElementById("hasilHuruf").innerText = "Nilai Huruf : " + nilaihuruf
+    })
+</script>
+</html>
