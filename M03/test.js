@@ -5,7 +5,7 @@ let show = function(data){
     document.getElementById('name').innerHTML = arr.name;
     document.getElementById('username').innerHTML = arr.username;
     document.getElementById('email').innerHTML = arr.email;
-    document.getElementById('address').innerHTML = arr.address;
+    document.getElementById('address').innerHTML = arr.address.city;
 
 }
 let load = function(){
